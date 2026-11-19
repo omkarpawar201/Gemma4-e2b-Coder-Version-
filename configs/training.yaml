@@ -1,0 +1,18 @@
+﻿training:
+  status: "phase2_not_started"
+  note: "Phase 1 establishes foundation only. Do not start fine-tuning."
+  method: "qlora_lora"
+  framework_candidates:
+    - "transformers"
+    - "peft"
+    - "trl"
+  dataset_format: "jsonl"
+  output:
+    adapters_dir: "outputs/adapters"
+    checkpoints_dir: "outputs/checkpoints"
+    merged_dir: "outputs/merged"
+  colab_only: true
+  compatibility_checks_required:
+    - "verify Gemma 4 support in installed Transformers/TRL/PEFT versions"
+    - "verify target modules for LoRA with Gemma 4 architecture"
+    - "verify quantization backend (bitsandbytes) availability in Colab"

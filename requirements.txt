@@ -1,0 +1,10 @@
+﻿torch>=2.4.0
+transformers>=5.10.1
+accelerate>=1.0.0
+huggingface_hub>=0.30.0
+safetensors>=0.4.5
+pyyaml>=6.0.2
+psutil>=6.0.0
+jupyter>=1.1.0
+ipykernel>=6.29.0
+ipywidgets>=8.1.0

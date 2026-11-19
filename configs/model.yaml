@@ -1,0 +1,30 @@
+﻿model:
+  model_id: "google/gemma-4-E2B-it"
+  base_model_id: "google/gemma-4-E2B"
+  revision: "main"
+  trust_remote_code: false
+
+loading:
+  # Baseline inference settings (Colab-oriented, memory-conscious)
+  torch_dtype: "auto"          # bfloat16/float16/float32 chosen by runtime when possible
+  device_map: "auto"
+  low_cpu_mem_usage: true
+  attn_implementation: null     # set to "sdpa"/"flash_attention_2" if verified available
+
+generation:
+  max_new_tokens: 1024
+  temperature: 1.0
+  top_p: 0.95
+  top_k: 64
+  do_sample: false              # deterministic by default for baseline benchmarking
+  enable_thinking: false        # configurable; E2B/E4B behavior differs from larger Gemma 4 models
+
+paths:
+  # Keep all caches/downloads inside the project (do NOT use C:\ user cache)
+  project_cache_dir: ".cache"
+  hf_home: ".cache/huggingface"
+  transformers_cache: ".cache/transformers"
+  benchmarks_dir: "benchmarks"
+  results_dir: "benchmarks/results"
+  drive_mount_point: "/content/drive"
+  drive_results_dir: "MyDrive/GemmaCode-E2B/benchmarks/results"

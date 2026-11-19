@@ -1,0 +1,28 @@
+﻿evaluation:
+  dimensions:
+    - technical_correctness
+    - code_quality
+    - maintainability
+    - instruction_following
+    - debugging_accuracy
+    - architectural_reasoning
+    - hallucination_resistance
+  scoring:
+    scale: "1-5"
+    method: "human_rubric_initial"
+    fabricate_scores: false
+  comparisons:
+    - original_gemma4_e2b
+    - finetuned_gemma4_e2b
+    - finetuned_gemma4_e2b_with_rag
+  baseline:
+    task_file: "benchmarks/coding_tasks.jsonl"
+    results_file: "benchmarks/results/baseline_original.json"
+    deterministic: true
+    generation_defaults:
+      max_new_tokens: 1024
+      temperature: 1.0
+      top_p: 0.95
+      top_k: 64
+      do_sample: false
+      enable_thinking: false

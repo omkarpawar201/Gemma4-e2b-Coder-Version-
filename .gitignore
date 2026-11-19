@@ -1,0 +1,70 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets / credentials
+.env
+*.key
+*.pem
+secrets.*
+token*
+hf_token*
+
+# Model weights and large artifacts (NEVER commit)
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+*.onnx
+models/
+outputs/adapters/*
+outputs/checkpoints/*
+outputs/merged/*
+!outputs/adapters/.gitkeep
+!outputs/checkpoints/.gitkeep
+!outputs/merged/.gitkeep
+
+# Data (keep structure, ignore contents by default except placeholders)
+data/raw/*
+data/processed/*
+data/train/*
+data/validation/*
+data/test/*
+!data/**/.gitkeep
+
+# Benchmark run artifacts (keep curated result files tracked if desired, but ignore bulky extras)
+benchmarks/results/*
+!benchmarks/results/.gitkeep
+
+# Logs/cache
+*.log
+logs/
+.cache/
+wandb/
